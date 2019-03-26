@@ -1,0 +1,90 @@
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+
+	<modelVersion>4.0.0</modelVersion>
+	<groupId>org.jzy3d</groupId>
+	<artifactId>jogl-demos-maven</artifactId>
+	<name>JOGL Demos</name>
+
+	<version>2.3.2</version>
+
+
+	<description>JOGL Demos built with maven (derived from https://github.com/sgothel/jogl-demos)</description>
+
+	<properties>
+		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+		<version.jogl>${project.version}</version.jogl>
+		<version.java.source>1.8</version.java.source>
+		<version.java.target>1.8</version.java.target>
+		<version.mvn.compiler>3.0</version.mvn.compiler>
+
+	</properties>
+
+	<dependencies>
+
+		<dependency>
+			<groupId>org.jogamp.gluegen</groupId>
+			<artifactId>gluegen-rt-main</artifactId>
+			<version>${version.jogl}</version>
+		</dependency>
+
+		<dependency>
+			<groupId>org.jogamp.jogl</groupId>
+			<artifactId>jogl-all-main</artifactId>
+			<version>${version.jogl}</version>
+		</dependency>
+
+		<dependency>
+			<groupId>org.jogamp.joal</groupId>
+			<artifactId>joal</artifactId>
+			<version>${version.jogl}</version>
+		</dependency>
+
+
+		<!-- LINUX 64 -->
+		<dependency>
+			<groupId>org.eclipse.swt</groupId>
+			<artifactId>org.eclipse.swt.gtk.linux.x86_64</artifactId>
+			<version>4.3</version>
+		</dependency>
+
+		<!-- MACOSX 64 -->
+		<dependency>
+			<groupId>org.eclipse.swt</groupId>
+			<artifactId>org.eclipse.swt.cocoa.macosx.x86_64</artifactId>
+			<version>4.3</version>
+		</dependency>
+
+		<!-- MACOSX 32 -->
+		<dependency>
+			<groupId>org.eclipse.swt</groupId>
+			<artifactId>org.eclipse.swt.cocoa.macosx</artifactId>
+			<version>4.3</version>
+		</dependency>
+
+	</dependencies>
+
+	<build>
+		<plugins>
+			<plugin>
+				<groupId>org.apache.maven.plugins</groupId>
+				<artifactId>maven-compiler-plugin</artifactId>
+				<version>${version.mvn.compiler}</version>
+				<configuration>
+					<source>${version.java.source}</source>
+					<target>${version.java.target}</target>
+				</configuration>
+			</plugin>
+		</plugins>
+	</build>
+
+	<repositories>
+		<!-- Fetch SWT Dependencies -->
+		<repository>
+			<id>swt-repo</id>
+			<url>http://maven-eclipse.github.io/maven</url>
+			<!--<url>https://swt-repo.googlecode.com/svn/repo/</url> -->
+		</repository>
+	</repositories>
+
+
+</project>
