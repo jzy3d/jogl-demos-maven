@@ -78,7 +78,7 @@ private final float view_rotz = 0.0f;
     
     //frame.setBounds(10, 10, 600, 600);
 
-    //animator.start();
+    animator.start();
   }
 
   public Gears(int swapInterval) {
